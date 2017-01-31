@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         Model::unguard();  //
-        $this->call(ArticlesTableSeeder::class);
+        $this->call('ArticlesTableSeeder');
         Model::reguard();  //
     }
 }

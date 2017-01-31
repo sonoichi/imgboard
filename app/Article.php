@@ -12,6 +12,9 @@ class Article extends Model
     //@var array
     protected $fillable = ['title', 'body', 'published_at'];
 
+    // published_at で日付ミューテーターを使う
+    protected $dates = ['published_at'];
+
     public function getTitleAttribute($value)
     {
         // 大文字に変換
@@ -19,6 +22,7 @@ class Article extends Model
     }
 
     public function setBodyAttribute($value){
+        //小文字に変換
         $this->attributes['title'] = mb_strtolower($value);
     }
 
