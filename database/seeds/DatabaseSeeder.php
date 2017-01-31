@@ -31,7 +31,7 @@ class ArticlesTableSeeder extends Seeder{
         for ($i = 0; $i < 10; $i++) {
             Article::create([
                 'title' => $faker->sentence(),
-                'body' => $faker->paragraph(),
+                'body' => 'This is a sample',
                 'published_at' => Carbon::today()
             ]);
         }

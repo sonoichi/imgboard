@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class Article extends Model
 {
     // @var string
@@ -23,7 +23,7 @@ class Article extends Model
 
     public function setBodyAttribute($value){
         //小文字に変換
-        $this->attributes['title'] = mb_strtolower($value);
+        $this->attributes['body'] = mb_strtolower($value);
     }
 
     public function scopePublished($query) {
