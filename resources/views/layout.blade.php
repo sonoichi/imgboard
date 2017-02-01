@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF=8">
-    <title>My Blog</title>
+    <title>投稿型掲示板</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
