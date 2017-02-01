@@ -4,7 +4,8 @@
     <h1>Write a New Article</h1>
     <hr/>
     {{-- エラーの表示を追加 --}}
-    @if ($errors->any())
+    @include('errors.form_errors')
+    {{--@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -12,9 +13,9 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif--}}
 
-    {!! Form::open(['url' => 'articles']) !!}
+    {{-- {!! Form::open(['url' => 'articles']) !!}
         <div class="form-group">
             {!! Form::label('title', 'Title:') !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
@@ -33,6 +34,11 @@
         <div class="form-group">
             {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
         </div>
-
-    {!! Form::close() !!}
+        {!! Form::close() !!} --}}
+        
+        {{-- Form::open(['url' => 'articles']) --}}
+        {!! Form::open(['route' => 'articles.store']) !!}
+            @include('articles.form', ['published_at' => date('Y-m-d'), 'submitButton' => 'Add Article'])
+        {!! Form::close() !!}
+ 
 @endsection
