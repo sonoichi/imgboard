@@ -5,13 +5,15 @@
 
     <hr/>
 
-    @if ($errors->any())
+    @include('errors.form_errors')
+
+    {{--@if ($errors->any())
         <ul class="alert alert-danger">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
-    @endif
+    @endif--}}
 
     {!! Form::model($article, ['method' => 'PATCH', 'url' => ['articles', $article->id]]) !!}
     <div class="form-group">
